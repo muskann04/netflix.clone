@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header section -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">TV Shows</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">My List</a></li>
+        </ul>
+      </nav>
+      <div class="search-container">
+        <input type="text" placeholder="Search" />
+        <button type="submit">Search</button>
+      </div>
+      <div class="profile-container">
+        <img src="https://www.wikihow.com/images/thumb/5/5c/Create-Separate-Netflix-Profiles-Step-10.jpg/v4-460px-Create-Separate-Netflix-Profiles-Step-10.jpg.webp"  alt="Profile Picture" height="200" width="100"/>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+
+
+<center><img src="https://i.pcmag.com/imagery/reviews/05cItXL96l4LE9n02WfDR0h-5..v1582751026.png" alt="Netflix" ></center>
+    
+   <!-- Main section -->
+    <main>
+      <section class="hero">
+        <h1>Unlimited movies, TV shows, and more.</h1>
+        <p>Watch anywhere. Cancel anytime.</p>
+        
+        <a href="sign.html">  <button> Sign Up HERE</button>     </a>   
+      </section>
+
+      <section class="featured">
+        <h2>Featured Content</h2>
+        <div class="card-container">
+          <div class="card">
+            <img src="https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2022/10/4146A764-B8FE-4E5D-A7C4-1AD13A9AF299-1024x768-photoutils.com_.jpeg" alt="Movie Title" height="400" width="300" />
+            <h3> popular Movies </h3>
+          </div>
+          <div class="card">
+            <img src="https://tvline.com/wp-content/uploads/2020/02/netflix-top-10-row.png" alt="TV Show Title" height="400" width="300"/>
+            <h3>popular TV Show </h3>
+          </div>
+          <div class="card">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/best-anime-on-netflix-1668700559.jpg" alt="Movie Title" height="400" width="300"/>
+            <h3>popular Anime  </h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories">
+        <h2>Browse by Category</h2>
+        <ul>
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Comedy</a></li>
+          <li><a href="#">Drama</a></li>
+          <li><a href="#">Horror</a></li>
+          <li><a href="#">Romance</a></li>
+          <li><a href="#">Science Fiction</a></li>
+          <li><a href="#">Thriller</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+      <p>&copy; 2023 Netflix Clone. All Rights Reserved.</p>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </footer>
+    <script>
+      const express = require('express');
+const app = express();
+
+// API endpoint to get movies
+app.get('/api/movies', (req, res) => {
+  // Logic to fetch movies data from the database
+  // Return the movies data as JSON
+});
+
+// API endpoint to get TV shows
+app.get('/api/tvshows', (req, res) => {
+  // Logic to fetch TV shows data from the database
+  // Return the TV shows data as JSON
+});
+
+// Start the server
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+// Movie schema
+const spiderman = new Schema({
+  title: String,
+  description: String,
+  // Add more fields as needed
+});
+
+// Create a model based on the schema
+const Movie = mongoose.model('Movie', spiderman);
+
+// Connect to the database
+mongoose.connect('mongodb://localhost/netflix-clone', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to the database');
+  })
+  .catch((error) => {
+    console.error('Error connecting to the database', error);
+  });
+
+    </script>
+  </body>
+</html>
